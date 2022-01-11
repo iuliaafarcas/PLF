@@ -56,8 +56,13 @@ changeList([H|T],Counter,[H |R]):-
 
 mainFunction([H|T],R):-
     areWeDone([H|T]),
+    !,
     changeList([H|T],1,ChangedList),
     mainFunction(ChangedList,R).
+mainFunction(L,L).
+
+
+
 
 
 
